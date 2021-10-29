@@ -37,7 +37,15 @@ async function run(){
             console.log(result,id);
             res.json(result)
         })
-
+        // GET order Booking
+        app.get('/orderBooking/:email',async(req,res) => {
+            const email = req.params.email;
+            console.log(email);
+            const cursor = bookingCollection.find(email)
+            const result = await cursor.toArray();
+            console.log('post hit',result);
+            res.send(result)
+        })
         // POST API
         app.post('/addDestination',async(req,res) => {
             const destination = req.body;
