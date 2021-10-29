@@ -40,10 +40,11 @@ async function run(){
         // GET order Booking
         app.get('/orderBooking/:email',async(req,res) => {
             const email = req.params.email;
-            console.log(email);
-            const cursor = bookingCollection.find(email)
+            // console.log(email);
+            const query = {email:email}
+            const cursor = bookingCollection.find(query)
             const result = await cursor.toArray();
-            console.log('post hit',result);
+            console.log('post hitting',result);
             res.send(result)
         })
         // POST API
