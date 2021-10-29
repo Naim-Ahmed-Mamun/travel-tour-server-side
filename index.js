@@ -44,7 +44,7 @@ async function run(){
             const query = {email:email}
             const cursor = bookingCollection.find(query)
             const result = await cursor.toArray();
-            console.log('post hitting',result);
+            console.log('post hitting add',result);
             res.send(result)
         })
         // POST API
