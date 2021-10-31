@@ -22,13 +22,6 @@ async function run() {
         const bookingCollection = database.collection('orderBooking')
 
         // GET API
-        // app.get('/allDestinations', async (req, res) => {
-        //     const cursor = destinationCollection.find({});
-        //     const result = await cursor.toArray();
-        //     // console.log(result);
-        //     res.send(result)
-        // })
-        // GET API
         app.get('/destinations', async (req, res) => {
             const cursor = destinationCollection.find({});
             const result = await cursor.toArray();
